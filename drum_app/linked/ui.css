@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: arial;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hamburger {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 20px;
+  top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 9999;
+}
+
+.hamburger.active .hamburger-inner:first-child {
+  transform: rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner:last-child {
+  transform: rotate(-45deg);
+}
+
+.hamburger.active .hamburger-inner:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-inner {
+  background: #fff;
+}
+
+.topbar {
+  width: 100%;
+  height: 70%;
+  background-color: dodgerblue;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: none;
+  z-index: 8;
+}
+
+.topbar-content {
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+}
+
+.topbar-content ul {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 20px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.topbar ul li {
+  cursor: pointer;
+}
+
+.blur {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+}
+
+.hamburger:active {
+  transform: scale(1.1);
+}
+
+.hamburger-inner {
+  display: inline-block;
+  width: 90%;
+  height: 4px;
+  background: #222;
+  border-radius: 2px;
+  transition: 0.3s;
+  transform-origin: 0 0 0;
+}
+
+.header {
+  background: linear-gradient(to right, #fff, dodgerblue, #ffff);
+  width: 100%;
+  padding: 5px 10px;
+  text-align: center;
+  top: 0;
+  left: 0;
+  color: #fff;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.main-inner {
+  display: flex;
+}
+
+.drum {
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.1s transform;
+}
+
+.drum:active {
+  transform: scale(1.05);
+}
+
+.link {
+  color: #fff;
+}
+
+/* screen responsive */
+@media screen and (max-width: 476px), screen and (max-width: 700px) {
+  .container {
+    width: 100%;
+  }
+
+  .drum {
+    width: 110px;
+    height: 110px;
+  }
+}
